@@ -1,0 +1,10 @@
+{
+  "appName": {
+    "message": "nuchange chromeapp",
+    "description": "The name of the application"
+  },
+  "appDescription": {
+    "message": "eHealth App",
+    "description": "The description of the application"
+  }
+}
