@@ -1,3 +1,15 @@
 'use strict';
 
-console.log('\'Allo \'Allo! Content script');
+chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
+	var divs = 'started';
+    switch(message.type) {
+        case 'read-text':
+            divs = 'I am reading';
+        break;
+    }
+    console.log(sender.tab ?
+            'from a content script:' + sender.tab.url :
+            'from the extension');
+    sendResponse({content: divs});
+    return true;
+});

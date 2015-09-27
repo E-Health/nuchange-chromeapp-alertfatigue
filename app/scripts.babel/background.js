@@ -16,6 +16,10 @@ var readText= function() {
     });
 };
 
+var respText = function(){
+    return 'NuChange';
+};
+
 //Add a single time event listner to the event from popup.js
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.type) {
@@ -26,7 +30,7 @@ chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     console.log(sender.tab ?
             'from a content script:' + sender.tab.url :
             'from the extension');
-    sendResponse({farewell: 'goodbye'});
+    sendResponse({farewell: respText()});
 
     return true;
 });
