@@ -10,6 +10,6 @@ chrome.extension.onMessage.addListener(function(message, sender, sendResponse) {
     console.log(sender.tab ?
             'from a content script:' + sender.tab.url :
             'from the extension');
-    sendResponse({content: divs});
+    sendResponse({contents: divs});
     return true;
 });

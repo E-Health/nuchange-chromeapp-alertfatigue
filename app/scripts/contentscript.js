@@ -8,7 +8,7 @@ chrome.extension.onMessage.addListener(function (message, sender, sendResponse) 
             break;
     }
     console.log(sender.tab ? 'from a content script:' + sender.tab.url : 'from the extension');
-    sendResponse({ content: divs });
+    sendResponse({ contents: divs });
     return true;
 });
 //# sourceMappingURL=contentscript.js.map
