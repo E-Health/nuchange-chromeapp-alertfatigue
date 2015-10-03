@@ -25,6 +25,17 @@ var respText = function(){
     return thisText;
 };
 
+"""
+chrome.browserAction.onClicked.addListener(function(tab) { 
+    var link = tab.url;
+    var x = new XMLHttpRequest();
+    x.open('GET', 'http://example.com/?whatever=' + link);
+    x.onload = function() {
+        alert(x.responseText);
+    };
+    x.send();
+});
+"""
 //Add a single time event listner to the event from popup.js
 chrome.extension.onMessage.addListener(function(request, sender, sendResponse) {
     switch(request.type) {
